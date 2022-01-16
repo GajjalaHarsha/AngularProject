@@ -1,0 +1,60 @@
+<!-- <a routerLink="/adminselectspecialization">Home</a> |
+<a routerLink="/adminlogout">Logout</a> -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/updatedoctor.png'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <app-adminheader></app-adminheader>
+    <div class="container left">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="doctorId">Doctor id</label>
+                        <input type="number" id="doctorId" class="form-control" formControlName="doctorId" readonly/>
+                        <span class="errors" *ngIf="!updateForm.get('doctorId').valid && updateForm.get('doctorId').touched">Enter a valid Id</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorName">Doctor Name</label>
+                        <input type="text" id="doctorName" class="form-control" formControlName="doctorName" />
+                        <span class="errors" *ngIf="!updateForm.get('doctorName').valid && updateForm.get('doctorName').touched">Enter a Valid doctor name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="splName">Doctor specialization</label>
+                        <input type="text" id="splName" class="form-control" formControlName="splName" readonly/>
+                        <span class="errors" *ngIf="!updateForm.get('splName').valid && updateForm.get('splName').touched">Enter a Valid Specialization</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Doctor Experience</label>
+                        <input type="number" id="experience" class="form-control" formControlName="experience" />
+                        <span class="errors" *ngIf="!updateForm.get('experience').valid && updateForm.get('experience').touched && updateForm.get('experience').errors.required">Enter a Valid Experience</span>
+                        <span class="errors" *ngIf=" !updateForm.get('experience').valid && (updateForm.get('experience').errors.min || updateForm.get('experience').errors.max)">Experience should be between 0 and 50</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="noOfOperationsTaken">No Of Operations taken</label>
+                        <input type="number" id="noOfOperationsTaken" class="form-control" formControlName="noOfOperationsTaken" />
+                        <span class="errors" *ngIf="!updateForm.get('noOfOperationsTaken').valid && updateForm.get('noOfOperationsTaken').touched && updateForm.get('noOfOperationsTaken').errors.required">Enter a Valid Operations</span>
+                        <span class="errors" *ngIf=" !updateForm.get('noOfOperationsTaken').valid && (updateForm.get('noOfOperationsTaken').errors.min || updateForm.get('noOfOperationsTaken').errors.max)">Operations should be between 0 and 500</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="operationsSuccess">Operations Success</label>
+                        <input type="number" id="operationsSuccess" class="form-control" formControlName="operationsSuccess" />
+                        <span class="errors" *ngIf="!updateForm.get('operationsSuccess').valid && updateForm.get('operationsSuccess').touched && updateForm.get('operationsSuccess').errors.required">Enter a Valid Operationssuccess</span>
+                        <span class="errors" *ngIf="func()">Operations Success should be less than operations taken</span>
+                        <span class="errors" *ngIf=" !updateForm.get('operationsSuccess').valid && updateForm.get('operationsSuccess').errors.min ">Operations Success should be greater than zero</span>
+                    </div><br>
+                    <!-- <div class="form-group">
+                    <label for="successRatio">successRatio</label>
+                    <input type="number" id="successRatio" class="form-control" formControlName="successRatio" hidden />
+                    <span class="errors" *ngIf="!updateForm.get('successRatio').valid && updateForm.get('successRatio').touched">Enter a Valid Company</span>
+                </div> -->
+                    <div class="form-group">
+                        <button class="btn btn-success" [disabled]="!updateForm.valid || func()">Update Doctor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,15 @@
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+.errors {
+    color: red;
+}
+.container{
+    margin-top: 9rem;
+    background-color:transparent;
+    width: 40%;
+    /* margin-left: 5rem; */
+    float: right;
+    margin-right: 0rem;
+}

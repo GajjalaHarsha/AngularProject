@@ -1,0 +1,55 @@
+<!-- <p>homepage works!</p> -->
+<!-- <img src="assets/images/homepage.png"> -->
+<!-- class="navbar navbar-dark bg-dark" -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/homepage.png'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <nav class="navbar navbar-expand-sm navbar-light  mb-5" style="background-color: #71a9c9;">
+        <!-- <h1 class="navbar-brand ml-2" href="#">Hospital Near By</h1> -->
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+            <!--div class="container ml-auto"-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <!-- <a class="btn btn-primary " routerLink="/specialization" role="button">Home</a> -->
+                    <a routerLink="/login" routerLinkActive="active" class="nav-link " style="color: black;"> Login</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a  class="btn btn-primary " routerLink="/bookedappointments" role="button">Your Appointments</a> -->
+                    <a routerLink="/register" routerLinkActive="active" class="nav-link" style="color: black;"> Register</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="btn btn-primary " routerLink="/logout" role="button">Logout</a> -->
+                    <a routerLink="/adminlogin" routerLinkActive="active" class="nav-link" style="color: black;">AdminLogin</a>
+                </li>
+
+
+            </ul>
+            <!--/div-->
+        </div>
+    </nav>
+
+    <h1 style="text-align: center;">Hospital Near By</h1>
+
+
+    <!-- <h1 class="h1 display">Hospital Near By</h1> -->
+
+
+    <!-- <div class="link block link1">
+        <a class="btn btn-primary " routerLink="/login" role="button">User Login</a>
+    </div>
+    <div class="link block link2">
+        <a class="btn btn-primary" routerLink="/register" role="button">User Register</a>
+    </div>
+    <div class="link link3 block">
+        <a class="btn btn-primary" routerLink="/adminlogin" role="button">AdminLogin</a>
+    </div> -->
+
+</div>
+
+
+<app-footer></app-footer>

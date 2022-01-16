@@ -1,0 +1,24 @@
+<!-- <a routerLink="/specialization">Home</a> |
+<a routerLink="/bookedappointments">Your Appointments</a> |
+<a routerLink="/logout">Logout</a> -->
+<div style="width: 100%; height:100%; position: fixed; top:0; left:0;
+ background-image: url('../../assets/images/Cute-Gray-Plain-Background.jpg'); background-position: center;background-repeat: no-repeat;
+ background-size: cover;">
+    <app-userheader></app-userheader>
+    <div class="container card" style="width: 50%; margin-top: 6rem; border: 2px solid rgb(15, 11, 80);">
+        <div class="card-header" style="text-align: center; font-weight: 500;">Specializations in the Hospital</div>
+        <div class="card-body">
+            <div class="row " style="margin-left:9rem; padding:1rem 0 1rem 0">
+                <div class="col-md-offset-5 col-md-5" *ngFor="let s of spec">
+                    <figure>
+                        <a (click)="getDoctors(s)" role="button">
+                            <img alt="{{s.splName}}" src="assets/images/{{s.splName}}.png" height="100">
+                        </a>
+                        <figcaption>{{s.splName}} </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

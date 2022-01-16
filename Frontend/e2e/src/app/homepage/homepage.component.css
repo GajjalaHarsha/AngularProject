@@ -1,0 +1,50 @@
+ body {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ h2 {
+     width: 200px;
+     text-align: center;
+ }
+ 
+ .link {
+     width: 200px;
+ }
+ 
+ .link a {
+     text-decoration: none;
+     border: 2px solid #0066cc;
+     border-radius: 3px;
+     background-color: blue;
+     color: white;
+ }
+ 
+ .link a:hover {
+     color: red;
+ }
+ 
+ .block {
+     margin-top: 55px;
+     float: right;
+ }
+ /* body {
+     background-image: url("homepage.png");
+ } */
+ 
+ .display {
+     width: 450px;
+     margin: -100px auto 0px auto;
+ }
+ 
+ .link2 {
+     margin-right: 60px;
+ }
+ 
+ .link1 {
+     margin-right: 65px;
+ }
+ 
+ .link3 {
+     margin-right: 385px;
+ }

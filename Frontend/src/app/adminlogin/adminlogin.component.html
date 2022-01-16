@@ -1,0 +1,39 @@
+<div style="width: 100%; height:100%; position: fixed; top:0; left:0;
+ background-image: url('../../assets/images/adminpage.png'); background-position: center;background-repeat: no-repeat;
+ background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <!-- <p *ngIf="!isValid">
+                    <ngb-alert type="danger" style="width: 20rem;" [dismissible]="true">
+                      {{message}} &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                    </ngb-alert>
+                  </p> -->
+                    <div *ngIf="!isValid" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <fieldset>
+                        <h2>Admin Login</h2>
+                        <div class="form-group">
+                            <label for="name">Admin Name</label>
+                            <input type="text" id="name" class="form-control" formControlName="name" required/>
+                            <span class="errors" *ngIf="!loginForm.get('name').valid && loginForm.get('name').touched">Enter a Valid name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Admin password</label>
+                            <input type="password" id="password" class="form-control" formControlName="password" required/>
+                            <span class="errors" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Enter a Valid password</span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+<!-- <a routerLink="/adminselectspecialization">Home</a>
+|
+<a routerLink="/adminlogout">Logout</a> -->
+<div style="width: 100%; height:100%; position: fixed; top:0; left:0;
+ background-image: url('../../assets/images/background.jpg'); background-position: center;background-repeat: no-repeat;
+ background-size: cover;">
+    <app-adminheader></app-adminheader>
+    <div class="container down " style="border: 2px solid rgb(43, 14, 90);">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <form [formGroup]="specializationForm" (ngSubmit)="onSubmit()" style="padding: 1rem 0 1rem 0;">
+                    <fieldset>
+                        <h2>Select Specialization</h2>
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <select name="specialization" id="specialization" formControlName="specialization">
+                        <option value="{{spec.splName}}" *ngFor="let spec of specializations">{{spec.splName}}</option>
+                    </select>
+                            <!-- <input type="text" id="name" class="form-control" formControlName="name" required/> -->
+                            <!-- <span class="errors" *ngIf="!specializationForm.get('name').valid && specializationForm.get('name').touched">Enter a Valid name</span> -->
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button class="btn btn-success" [disabled]="!specializationForm.valid">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

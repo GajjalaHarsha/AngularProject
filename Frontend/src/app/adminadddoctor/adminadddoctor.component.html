@@ -1,0 +1,52 @@
+<!-- <a routerLink="/adminselectspecialization">Home</a> |
+<a routerLink="/adminlogout">Logout</a> -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/adddoctor.png'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <app-adminheader></app-adminheader>
+    <div class="container left">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <form [formGroup]="addDoctorForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="doctorName">Doctor Name</label>
+                        <input type="text" id="doctorName" class="form-control" formControlName="doctorName" />
+                        <span class="errors" *ngIf="!addDoctorForm.get('doctorName').valid && addDoctorForm.get('doctorName').touched">Enter a Valid name</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Doctor Experience</label>
+                        <input type="number" id="experience" class="form-control" formControlName="experience" />
+                        <span class="errors" *ngIf="!addDoctorForm.get('experience').valid && addDoctorForm.get('experience').touched && addDoctorForm.get('experience').errors.required">Enter a Valid Experience</span>
+                        <span class="errors" *ngIf=" !addDoctorForm.get('experience').valid && (addDoctorForm.get('experience').errors.min || addDoctorForm.get('experience').errors.max)">Experience should be between 0 and 50</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="noOfOperationsTaken">No Of Operations taken</label>
+                        <input type="number" id="noOfOperationsTaken" class="form-control" formControlName="noOfOperationsTaken" />
+                        <span class="errors" *ngIf="!addDoctorForm.get('noOfOperationsTaken').valid && addDoctorForm.get('noOfOperationsTaken').touched && addDoctorForm.get('noOfOperationsTaken').errors.required">Enter a Valid Operations</span>
+                        <span class="errors" *ngIf=" !addDoctorForm.get('noOfOperationsTaken').valid && (addDoctorForm.get('noOfOperationsTaken').errors.min || addDoctorForm.get('noOfOperationsTaken').errors.max)">Operations should be between 0 and 500</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="operationsSuccess">Operations Success</label>
+                        <input type="number" id="operationsSuccess" class="form-control" formControlName="operationsSuccess" />
+                        <span class="errors" *ngIf=" !addDoctorForm.get('operationsSuccess').valid && addDoctorForm.get('operationsSuccess').errors.min ">Operations Success should be greater than zero</span>
+                        <span class="errors" *ngIf="!addDoctorForm.get('operationsSuccess').valid && addDoctorForm.get('operationsSuccess').touched && addDoctorForm.get('operationsSuccess').errors.required">Enter a Valid Operationssuccess</span>
+                        <span class="errors" *ngIf="func()">Operations Success should be less than operations taken</span>
+
+                    </div><br>
+                    <!-- <div class="form-group">
+                    <label for="successRatio">successRatio</label>
+                    <input type="number" id="successRatio" class="form-control" formControlName="successRatio" hidden />
+                    <span class="errors" *ngIf="!addDoctorForm.get('successRatio').valid && addDoctorForm.get('successRatio').touched">Enter a Valid Company</span>
+                </div> -->
+                    <div class="form-group">
+                        <button class="btn btn-success" [disabled]="!addDoctorForm.valid || func()">Add Doctor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

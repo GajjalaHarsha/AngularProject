@@ -1,0 +1,36 @@
+<!-- <a routerLink="/specialization">Home</a> |
+<a routerLink="/bookedappointments">Your Appointments</a> |
+<a routerLink="/logout">Logout</a> -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/specialization.png'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <app-userheader></app-userheader>
+
+    <div class="container" *ngIf="isPresent; else notThere">
+        <!-- <p>departmentdoctors works!</p> -->
+        <h1>The doctors in the {{spec}} Department</h1>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let doctor of doctors; let indexOfelement=index;" style="font-weight: 400;">
+                    <td>{{indexOfelement+1}}</td>
+                    <td>{{doctor.doctorName}}</td>
+                    <td><button class="btn btn-success" (click)="viewEmployee(doctor)">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <ng-template #notThere>No Doctors in the department</ng-template>
+    </div>
+</div>
+<app-footer></app-footer>

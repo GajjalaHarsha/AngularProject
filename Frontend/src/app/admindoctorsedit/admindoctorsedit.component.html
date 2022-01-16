@@ -1,0 +1,42 @@
+<!-- <a routerLink="/adminselectspecialization">Home</a> |
+<a routerLink="/adminlogout">Logout</a> -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/editdoctor.png'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <app-adminheader></app-adminheader>
+
+
+    <div class="container">
+        <h1>Doctors in the {{specializationName}} Department</h1>
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>experience</th>
+                    <th>no of operations handled</th>
+                    <th>no of operations succeeded</th>
+                    <th>success ratio</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let doctor of doctors; let indexOfelement=index;">
+                    <td>{{indexOfelement+1}}</td>
+                    <td>{{doctor.doctorName}}</td>
+                    <td>{{doctor.experience}}</td>
+                    <td>{{doctor.noOfOperationsTaken}}</td>
+                    <td>{{doctor.operationsSuccess}}</td>
+                    <td>{{doctor.successRatio}}</td>
+                    <td><button class="btn btn-primary" (click)="updatedoctor(doctor)">Update</button>
+                        <button class="btn btn-danger" (click)="deletedoctor(doctor)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" (click)="adddoctor()">Add Doctor</button>
+    </div>
+</div>
+<app-footer></app-footer>

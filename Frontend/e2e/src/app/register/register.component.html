@@ -1,0 +1,45 @@
+<div style="width: 100%; height:100%; position: fixed; top:0; left:0;
+ background-image: url('../../assets/images/registrationpage.png'); background-position: center;background-repeat: no-repeat;
+ background-size: cover;">
+    <div class="container">
+        <!-- <h1 style="color: red;">{{message}}</h1> -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <!-- <p *ngIf="!isValid">
+                    <ngb-alert type="danger" style="width: 20rem;" [dismissible]="true">
+                      {{message}} 
+                    </ngb-alert>
+                  </p> -->
+                    <div *ngIf="!isValid" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <fieldset>
+                        <h2>Registration</h2>
+                        <div class="form-group">
+                            <label for="name">User Name</label>
+                            <input type="text" id="name" class="form-control" formControlName="name" />
+                            <span class="errors" *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched">Enter a Valid name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">User password</label>
+                            <input type="password" id="password" class="form-control" formControlName="password" />
+                            <span class="errors" *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">Enter a Valid password</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">User Email</label>
+                            <input type="email" id="email" class="form-control" formControlName="email" />
+                            <span class="errors" *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">Enter a Valid email</span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button class="btn btn-success" [disabled]="!signupForm.valid">Register</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+<!-- <p>appointmentbooking works!</p> -->
+<!-- <a routerLink="/specialization">Home</a> |
+<a routerLink="/bookedappointments">Your Appointments</a> |
+<a routerLink="/logout">Logout</a> -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/appointment.jpg'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <app-userheader></app-userheader>
+    <div class="container down">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+                    <fieldset>
+                        <h2>Appointment Booking</h2>
+                        <div class="form-group">
+                            <label for="date">Appointment Date</label>
+                            <input type="date" id="date" class="form-control" formControlName="appointmentDate" required/>
+                            <span class="errors" *ngIf="!appointmentForm.get('appointmentDate').valid && appointmentForm.get('appointmentDate').touched">Enter a Valid Appointment Date</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Appointment Time</label>
+                            <input type="time" id="time" class="form-control" formControlName="appointmentTime" required/>
+                            <span class="errors" *ngIf="!appointmentForm.get('appointmentTime').valid && appointmentForm.get('appointmentTime').touched">Enter a Valid Appointment Time</span>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button class="btn btn-success" [disabled]="!appointmentForm.valid">Book Appointment</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,33 @@
+<!-- <p>doctorview works!</p> -->
+<!-- <a routerLink="/specialization">Home</a> |
+<a routerLink="/bookedappointments">Your Appointments</a> |
+<a routerLink="/logout">Logout</a> -->
+<div style="width: 100%; height:100%; position:fixed; top:0px; left:0;
+
+background-image: url('../../assets/images/view.png'); background-position: center;background-repeat: no-repeat;
+
+background-size: cover;">
+    <app-userheader></app-userheader>
+    <div class="card container down" style="width: 35%;">
+        <div class="card-header" style="text-align: center;">
+            <h2>Doctor details</h2>
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <pre>
+    Doctor Id                 : {{doctorData.doctorId}}
+    Doctor Name               : {{doctorData.doctorName}}
+    Doctor Specialization     : {{doctorData.splName}}
+    Doctor Experience         : {{doctorData.experience}}
+    Doctor OPerations Taken   : {{doctorData.noOfOperationsTaken}}
+    Operations Success        : {{doctorData.operationsSuccess}}
+    Success Ratio             : {{doctorData.successRatio}} 
+    
+    <a class="btn btn-primary" (click)="bookAppointment(doctorData)" role="button">Book Appointment</a>
+    
+</pre>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
